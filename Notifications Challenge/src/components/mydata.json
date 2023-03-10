@@ -1,0 +1,88 @@
+{
+    "messages": [
+        {"notification":{
+            "id": "shchDJrYY",
+            "message": "reacted to your recent post",
+            "type": "reaction",
+            "timestamp": "3 min ago",
+            "author": {
+                "name": "Mark Webber",
+                "img": "images/avatar-mark-webber.webp"
+            },
+            "link": "My first tournament today!",
+            "read": true
+        }},
+        {"notification":{
+            "id": "jcvfJghkY",
+            "message": "followed you",
+            "type": "follow",
+            "timestamp": "5 min ago",
+            "author": {
+                "name": "Angela Gray",
+                "img": "images/avatar-angela-gray.webp"
+            },
+            "link": "",
+            "read": false
+        }},
+        {"notification":{            "id": "gHJGjhrEe",
+            "message": "has joined your group",
+            "type": "group",
+            "timestamp": "1 day ago",
+            "author": {
+                "name": "Jacob Thompson",
+                "img": "images/avatar-jacob-thompson.webp"
+            },
+            "link": "Chess Club",
+                "read": false
+                }        },
+        {"notification":{            "id": "jdjdjJHgY",
+            "message": "sent you a private message",
+            "type": "message",
+            "timestamp": "5 days ago",
+            "author": {
+                "name": "Rizky Hasanuddin",
+                "img": "images/avatar-rizky-hasanuddin.webp",
+                "message": "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game."
+            },
+            "link": "",
+            "read": false
+        }},
+        {"notification":{
+            "id": "gshtdDYrT",
+            "message": "commented on your picture",
+            "type": "comment",
+            "timestamp": "1 week ago",
+            "author": {
+                "name": "Kimberly Smith",
+                "img": "images/avatar-kimberly-smith.webp",
+                "picture": ""
+            },
+            "link": "",
+            "read": true
+        }},
+        {"notification":{
+            "id": "djtrJHgTj",
+            "message": "reacted to your recent post",
+            "type": "reaction",
+            "timestamp": "2 weeks ago",
+            "author": {
+                "name": "Nathan Peterson",
+                "img": "images/avatar-nathan-peterson.webp"
+            },
+            "link": "5 end-game strategies to increase your win rate",
+            "read": true
+        }},
+        {"notification":{
+            "id": "dhrtyJHqg",
+            "message": "left the group",
+            "type": "group",
+            "timestamp": "2 weeks ago",
+            "author": {
+                "name": "Anna Kim",
+                "img": "images/avatar-anna-kim.webp"
+            },
+            "link": "Chess Club",
+            "read": false
+        }}
+    ]
+}
