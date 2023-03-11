@@ -51,15 +51,17 @@ console.log(readCount)
   };
 
   return (
-    <div>
+    <div className='notification-header'>
       <NotificationHeader
         readCount={readCount}
         handleMarkAllRead={handleMarkAllRead}
         handleMarkAllUnRead={handleMarkAllUnRead}
+        className="notification-header"
       />
       <NotificationList
         notifications={notifications}
         onClick={handleClick}
+        className="notification-container"
       />
     </div>
   );
@@ -76,7 +78,7 @@ const NotificationHeader = ({
       <header className="">
         <h1>
           Notifications{" "}
-          <span className="notification-icon">{readCount}</span>
+    <div className='notification-icon'> {readCount}</div>
         </h1>
 
       <div className="header-select-all">
@@ -127,11 +129,11 @@ const Notification = ({ notification, onClick, onFocus }) => {
     <div onClick={() => onClick(notification)} onFocus={() => onFocus(notification)} 
     className={ notification.read ? 'notification-container' :
       'unread-notification-container' }>
-      <div className="col-one">
+      {/* <div className="col-one"> */}
         {notification.author.img && (
           <img src={notification.author.img} alt="notification" />
         )}
-      </div>
+   
 
       <div className="col-two"><p>
         <span className="note-item name">{notification.author.name}</span>
@@ -147,6 +149,7 @@ const Notification = ({ notification, onClick, onFocus }) => {
           {notification.timestamp || notification.readAtTimestamp}
         </p>     {notification.author.message ? <span className='message note-item'> {notification.author.message}</span> : ''}
       </div>
+      {/* </div> */}
       {notification.read ? (
         <div className="readStatus">
           <span></span>

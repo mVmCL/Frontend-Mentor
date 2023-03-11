@@ -38,20 +38,23 @@ body{
 *{
     box-sizing: border-box;
     max-width: 100%;
+    margin:0;
+    padding:0;
     font-family: 'PlusJakartaSans-Variable';
     src: url('./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
     max-height:fit-content;
 }
 .notification-icon {
-float:right;
-margin-left:40px;
-height:auto;
+font-family: 'PlusJakartaSans-Variable';
+display: inline-block;
   background-color: #2e2be2;
   color:whitesmoke;
   font-weight: 800;
+  height:max-content;
   border-radius: 14px;
-  padding:3%;
   font-size: 35px;
+  padding: 8px;
+  margin:12px;
 
 }
 
@@ -157,8 +160,23 @@ border-radius: 14px;
     
 }
 
+@media  screen and (max-width: 800px) {
+  .notification-container{
+    position: fixed;
+    top: 20;
+    display: flex;
+  }
+
+
+
+  body {
+    height: 100vh;
+    min-height: max-content;
+  }
+}
+
 h1{
-    font-family:'PlusJakartaSans-Variable';
+    font-family:'Plus JakartaSans-Variable';
     font-size:40px;
     margin-left:20px;
     display: inline;
@@ -310,7 +328,7 @@ button{
 
 
   img, video {
-
+display:block;
     height: auto;
   }
 .unread-notification-container{
@@ -446,7 +464,10 @@ border-radius:150px;}
 
 .header-wrapper {
   display: flex;
-  flex-direction:row;
+  flex-direction:column;
+min-width: max-content;
+align-items: baseline;
+margin-bottom:23px;
   justify-content: space-between;
 }
 
@@ -455,7 +476,8 @@ header {
   width: 90%;
   padding:30px;
   justify-content: space-between;
-  align-items: center;
+  align-items:baseline;
+  margin-bottom: 20px;
 }
 
 .element1 {
