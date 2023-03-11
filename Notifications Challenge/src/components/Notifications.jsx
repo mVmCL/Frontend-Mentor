@@ -9,7 +9,7 @@ const Notifications = () => {
 
   const [notifications, setNotifications] = React.useState(data.notifications);
   const [readCount, setReadCount] = useState(notifications.filter(notification => notification.read).length);
-  const [numberOfNotifications, setNumberOfNotifications] = useState('')
+  const [unreadCount, setUnreadCount] = useState(notifications.filter(notification => !notification.read).length);
 console.log(readCount)
 
   useEffect(() => {
@@ -18,7 +18,8 @@ console.log(readCount)
     setReadCount(readCount);
   }, [notifications]);
   const handleClick = (notification) => {
-    if (notification.read) {
+    if (readCount === 7) {
+
       console.info(`Notification read ${notification.timestamp}.`);
     } else {
       console.info(
@@ -41,19 +42,27 @@ console.log(readCount)
   };
   const handleMarkAllRead = (notification) => {
     notifications.map((notification) => (notification.read = true));
-    setNotifications([...notifications]);
-    setReadCount(notifications.length);
+    // setNotifications([...notifications]);
+    // setReadCount(notifications.length);
+    // setUnreadCount(0)
+    setReadCount(0);
   };
 
   const handleMarkAllUnRead = (notification) => {
     notifications.map((notification) => (notification.read = false));
 
-    setNotifications([...notifications]);
-    // setReadCount(notification.read.length);
-    setNumberOfNotifications(7)
-
-    console.log(numberOfNotifications)
+    // setNotifications([...notifications]);
+    
+    
+    setReadCount('7');
+    // setUnreadCount(notifications.length)
+    
+    
+    // setReadCount(readCount);
   };
+
+
+
   return (
     <div className='notification-header'>
       <NotificationHeader
@@ -75,34 +84,61 @@ const NotificationHeader = ({
   readCount,
   handleMarkAllRead,
   handleMarkAllUnRead,
-  numberOfNotifications
 }) => {
   return (
     <div className="header-wrapper">
       <header className="">
         <h1>
           Notifications{" "}
-    <div className='notification-icon'> 
-    {readCount} 
-  {numberOfNotifications}
-    {/* {readCount = 0?numberOfNotifications} */}
-    </div>
+    <div className='notification-icon'> {readCount}/{data.notifications.length}</div>
         </h1>
 
       <div className="header-select-all">
-        {readCount < 7?(
-          <button className="no-button" onClick={handleMarkAllRead}>
-            Mark All Read
-          </button>
+        {readCount === 0?(
+         
+         <button className="no-button"  onClick={handleMarkAllUnRead}>
+         Mark All UnRead
+       </button>
+       
         ) : (
-          <button className="no-button" onClick={handleMarkAllUnRead}>
-            Mark All UnRead
-          </button>
+          <button className="no-button" onClick={handleMarkAllRead}>
+          Mark All Read
+        </button>
         )}
       </div>
        </header>   </div>
   );
 };
+
+// const NotificationList = ({ notifications, onClick, onFocus, notification }) => {
+//   return (
+//     <div
+//       onClick={() => {
+//         if (notification.read) {
+//           onClick(notification);
+//         }
+//       }}
+//       onFocus={() => {
+//         if (notification.read) {
+//           onFocus(notification);
+//         }
+//       }}
+//       className="notifications col-one"
+//     >
+//       {notifications.map((notification) => (
+//         <Notification
+//           key={notification.id}
+//           notification={notification}
+//           onClick={onClick}
+//           read={notification.read}
+//         />
+//       ))}
+//     </div>
+ 
+//   );
+// };
+
+
 
 const NotificationList = ({ notifications, onClick, onFocus, notification }) => {
   return (

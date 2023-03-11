@@ -1,0 +1,595 @@
+ <html>
+  <head>
+    <title>Frontend Coding Challenge</title>
+    <link rel="stylesheet" href="./style.css"/>
+    <script src="./app.js"></script>
+    <style>
+      /* Styles for the page */
+      body {
+        font-family: sans-serif;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .step {
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+      .step-title {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+      .step-content {
+        margin-bottom: 10px;
+      }
+      .step-actions {
+        text-align: right;
+      }
+      .step-actions button {
+        padding: 10px;
+        background-color: #ccc;
+        border: none;
+        cursor: pointer;
+      }
+      .step-actions button:hover,
+      .step-actions button:focus {
+        background-color: #aaa;
+      }
+      .summary {
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+      .summary-title {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+      .summary-content {
+        margin-bottom: 10px;
+      }
+      .summary-actions {
+        text-align: right;
+      }
+      .summary-actions button {
+        padding: 10px;
+        background-color: #ccc;
+        border: none;
+        cursor: pointer;
+      }
+      .summary-actions button:hover,
+      .summary-actions button:focus {
+        background-color: #aaa;
+      }
+      /* Media queries for optimal layout */
+      @media (min-width: 480px) {
+        .container {
+          display: flex;
+        }
+        .step {
+          flex: 1;
+        }
+        .summary {
+          flex: 1;
+        }
+      }
+    </style>
+  </head>
+  <!-- <body>
+    <div class="container">
+      <div class="step">
+        <div class="step-title">Step 1</div>
+        <div class="step-content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Donec velit eros, aliquam vel nisi vel, congue tempor
+            ipsum.
+          </p>
+          <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+        <div class="step-actions">
+          <button type="button" onclick="goToStep2()">Next</button>
+        </div>
+      </div>
+      <div class="step" id="step2" style="display: none;">
+        <div class="step-title">Step 2</div>
+        <div class="step-content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Donec velit eros, aliquam vel nisi vel, congue tempor
+            ipsum.
+          </p>
+          <input type="email" placeholder="Email address" />
+        </div>
+        <div class="step-actions">
+          <button type="button" onclick="goToStep1()">Back</button>
+          <button type="button" onclick="goToSummary()">Next</button>
+        </div>
+      </div>
+      <div class="summary" id="summary" style="display: none;">
+        <div class="summary-title">Summary</div>
+        <div class="summary-content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Donec velit eros, aliquam vel nisi vel, congue tempor
+            ipsum.
+          </p>
+          <ul>
+            <li>Selected option: <span id="selected-option">Option 1</span></li>
+            <li>Email address: <span id="email-address">example@example.com</span></li>
+          </ul>
+        </div>
+        <div class="summary-actions">
+          <button type="button" onclick="goToStep2()">Back</button>
+          <button type="button" onclick="confirmOrder()">Confirm Order</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Function to go to Step 1
+      function goToStep1() {
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('summary').style.display = 'none';
+      }
+      // Function to go to Step 2
+      function goToStep2() {
+        document.getElementById('step2').style.display = 'block';
+        document.getElementById('summary').style.display = 'none';
+      }
+      // Function to go to Summary
+      function goToSummary() {
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('summary').style.display = 'block';
+      }
+      // Function to confirm order
+      function confirmOrder() {
+        // Validate form
+        if (document.querySelector('select').value === '') {
+          alert('Please select an option');
+          return;
+        }
+        if (document.querySelector('input[type="email"]').value === '') {
+          alert('Please enter an email address');
+          return;
+        }
+        // Update summary
+        document.getElementById('selected-option').innerHTML = document.querySelector('select').value;
+        document.getElementById('email-address').innerHTML = document.querySelector('input[type="email"]').value;
+        // Confirm order
+        alert('Order confirmed!');
+      }
+    </script>
+  </body> -->
+
+
+  <body>
+    <main>
+        <div class="container">
+            <div class="side-bar">
+                <div class="track">
+                    <div class="number active-track">1</div>
+                    <div class="track-info">
+                        <div class="step">STEP 1</div>
+                        <div class="info">Your info</div>
+                    </div>
+                </div>
+                <div class="track">
+                    <div class="number">2</div>
+                    <div class="track-info">
+                        <div class="step">STEP 2</div>
+                        <div class="info">Select plan</div>
+                    </div>
+                </div>
+                <div class="track">
+                    <div class="number">3</div>
+                    <div class="track-info">
+                        <div class="step">STEP 3</div>
+                        <div class="info">Add-ons</div>
+                    </div>
+                </div>
+                <div class="track">
+                    <div class="number">4</div>
+                    <div class="track-info">
+                        <div class="step">STEP 4</div>
+                        <div class="info">Summary</div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel">
+                <div class="carousel-container">
+                        <div class="carousel-slide">
+                            <div class="personal">
+                                <h1 class="carousel-title">Personal info</h1>
+                                <p class="carousel-sub">Please provide a name, email address, and phone number.</p>
+                                <div class="input-box">
+                                    <div class="input-div">
+                                        <div class="input-top">
+                                            <label for="name">Name</label>
+                                            <p class="personal-input-check"></p>
+                                        </div>
+                                        <input class="name-input" id="name" placeholder="e.g. Stephen King" type="text">
+                                    </div>
+                                    <div class="input-div">
+                                        <div class="input-top">
+                                            <label for="email">Email Address</label>
+                                            <p class="personal-input-check"></p>
+                                        </div>
+                                        <input class="email-input" id="email" placeholder="e.g. stephenking@lorem.com" type="text">
+                                    </div>
+                                    <div class="input-div">
+                                        <div class="input-top">
+                                            <label for="number">Phone Number</label>
+                                            <p class="personal-input-check"></p>
+                                        </div>
+                                        <input class="number-input" id="number" placeholder="e.g. 1 234 567 8907" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="carousel-slide">
+                            <div class="Select-plan">
+                                <h1 class="carousel-title">Select your plan</h1>
+                                <p class="carousel-sub">You have the option of monthly or yearly billing.</p>
+    
+                                <div class="plans-container">
+                                    <div class="plans-div">
+                                        <div class="plans-box">
+                                            <div class="plans-img">
+                                                <img src="./images/icon-arcade.svg" alt="icon-arcade">
+                                            </div>  
+                                            <div class="plans-info">
+                                                <p class="plans-title">Arcade</p>
+                                                <p class="plans-cost">$9/mo</p>
+                                            </div>
+                                        </div>
+                                        <div class="plans-box">
+                                            <div class="plans-img">
+                                                <img src="./images/icon-advanced.svg" alt="icon-advanced">
+                                            </div>
+                                            <div class="plans-info">
+                                                <p class="plans-title">Advanced</p>
+                                                <p class="plans-cost">$12/mo</p>
+                                            </div>
+                                        </div>
+                                        <div class="plans-box">
+                                            <div class="plans-img">
+                                                <img src="./images/icon-pro.svg" alt="icon-pro">
+                                            </div>
+                                            <div class="plans-info">
+                                                <p class="plans-title">Pro</p>
+                                                <p class="plans-cost">$15/mo</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="plans-track-div">
+                                        <div class="monthly active-plan">Monthly</div>
+                                        <div class="plans-track">
+                                            <div class="track-div"></div>
+                                        </div>
+                                        <div class="yearly">Yearly</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="add-ons">
+                                <h1 class="carousel-title">Pick Add Ons</h1>
+                                <p class="carousel-sub">Add-ons help enhance your gaming experience.
+                                </p>
+    
+                                <div class="addons-container">
+                                    <div class="addons-div">
+                                        <div class="addons-info">
+                                            <div class="addons-checkbox">
+                                                <input type="checkbox">
+                                            </div>
+                                            <div class="addons">
+                                                <p class="plans-title">Online service</p>
+                                                <p class="plans-cost">Access to multiplayer games</p>
+                                            </div>
+                                        </div>
+                                        <div class="addons-time">+$1/mo</div>
+                                    </div>
+                                    <div class="addons-div">
+                                        <div class="addons-info">
+                                            <div class="addons-checkbox">
+                                                <input type="checkbox">
+                                            </div>
+                                            <div class="addons">
+                                                <p class="plans-title">Larger storage</p>
+                                                <p class="plans-cost">Extra 1TB of cloud save</p>
+                                            </div>
+                                        </div>
+                                        <div class="addons-time">+$2/mo</div>
+                                    </div>
+                                    <div class="addons-div">
+                                        <div class="addons-info">
+                                            <div class="addons-checkbox">
+                                                <input type="checkbox">
+                                            </div>
+                                            <div class="addons">
+                                                <p class="plans-title">Customizable Profile</p>
+                                                <p class="plans-cost">Custom theme on your profile</p>
+                                            </div>
+                                        </div>
+                                        <div class="addons-time">+$2/mo</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                            
+                        <div class="carousel-slide">
+                            <div class="summary">
+                                <h1 class="carousel-title">Finishing up</h1>
+                                <p class="carousel-sub">Double-check everything looks OK before confirming.
+                                </p>
+                                
+                                <div class="summary-box">
+                                    <div class="top-summary">
+                                        <div class="plan-summary">
+                                            <p class="plan-selected plans-title"><span></span></p>
+                                        </div>
+                                        <div class="plan-price"></div>
+                                    </div>
+                                    <div class="bottom-summary"></div>
+                                </div>
+    
+                                <div class="total-div">
+                                    <div class="total">Total <span>(per month)</span></div>
+                                    <div class="total-price"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide response">
+                            <div class="check-div">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <h1>Thank you!</h1>
+                            <p>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com</p>
+                        </div>
+                </div>
+                
+                <div class="carousel-btn">
+                    <div class="back is-hidden">Go Back</div>
+                    <div class="next">Next Step</div>
+                    <div class="confirm">Confirm</div>
+                </div>
+            </div>
+        </div>
+    </main>
+<script>  if (target.classList.value === "plans-box") {
+    plansBox.forEach(function (planBox) {
+      planBox.classList.remove("active-plan-box");
+      target.classList.add("active-plan-box");
+    });
+  } else if (target.classList.value === "plans-track") {
+    if (trackState) {
+      trackDiv.classList.add("yearly-track");
+
+      const plansCost = plansContainer.querySelectorAll(".plans-cost");
+      plansCost.forEach(function (planCost) {
+        planCost.innerText = planCost.innerText.slice(0, -3) + "0" + "/yr";
+      });
+
+      yearly.classList.add("active-plan");
+      monthly.classList.remove("active-plan");
+
+      plansBox.forEach(function (planBox) {
+        const yearPopUp = document.createElement("p");
+        yearPopUp.classList.add("year-pop-up");
+        let plansInfo = planBox.querySelector(".plans-info");
+        yearPopUp.innerText = "2 months free";
+        plansInfo.append(yearPopUp);
+      });
+
+      addonsDiv.forEach(function (addDiv) {
+        const addonTime = addDiv.querySelector(".addons-time");
+        addonTime.innerText = addonTime.innerText.slice(0, 3) + "0" + "/yr";
+      });
+    } else {
+      const plansCost = plansContainer.querySelectorAll(".plans-cost");
+      plansCost.forEach(function (planCost) {
+        planCost.innerText = planCost.innerText.slice(0, -4) + "/mo";
+      });
+
+      monthly.classList.add("active-plan");
+      yearly.classList.remove("active-plan");
+
+      trackDiv.classList.remove("yearly-track");
+
+      plansBox.forEach(function (planBox) {
+        let plansInfo = planBox.querySelector(".plans-info");
+        let yearPopUp = plansInfo.querySelector(".year-pop-up");
+        yearPopUp.classList.add("remove-popup");
+        yearPopUp.classList.remove("year-pop-up");
+      });
+
+      addonsDiv.forEach(function (addDiv) {
+        const addonTime = addDiv.querySelector(".addons-time");
+        addonTime.innerText = addonTime.innerText.slice(0, 3) + "/mo";
+      });
+    }
+    trackState = !trackState;
+  }
+
+  const activePlanBox = plansContainer.querySelector(".active-plan-box");
+  const plansTitle = activePlanBox.querySelector(".plans-title");
+  const activePlanCost = activePlanBox.querySelector(".plans-cost");
+  const activePlan = plansContainer.querySelector(".active-plan");
+
+  planSelected.innerHTML = `${plansTitle.innerText} <span>(${activePlan.innerText})</span>`;
+
+  planPrice.innerText = activePlanCost.innerText;
+
+  let slicedActivePlan = activePlan.innerText.slice(0, -2);
+  totalSpan.innerText = `(per ${slicedActivePlan.toLowerCase()})`;
+
+  updatePrices();
+
+  calculateTotalPrice();
+});
+
+// The addons:
+addonsDiv.forEach(function (addDiv) {
+  addDiv.addEventListener("click", function () {
+    this.classList.toggle("active-addon");
+    let checkBox = this.querySelector("input");
+    if (this.classList.contains("active-addon")) {
+      checkBox.checked = true;
+    } else {
+      checkBox.checked = false;
+    }
+  });
+});
+
+const addonsContainer = document.querySelector(".addons-container");
+addonsContainer.addEventListener("click", function (e) {
+  let target = e.target;
+  if (target.classList.contains("active-addon")) {
+    const addonTitle = target.querySelector(".plans-title");
+    const addonsTime = target.querySelector(".addons-time");
+
+    const addonSummary = document.createElement("div");
+    addonSummary.classList.add("addon-summary");
+
+    const addonSelected = document.createElement("p");
+    addonSelected.classList.add("addon-selected");
+    addonSelected.innerText = addonTitle.innerText;
+
+    const addonPrice = document.createElement("p");
+    addonPrice.classList.add("addon-price");
+    addonPrice.innerText = addonsTime.innerText;
+
+    addonSummary.appendChild(addonSelected);
+    addonSummary.appendChild(addonPrice);
+
+    bottomSummary.appendChild(addonSummary);
+    bottomSummary.classList.add("active-bottom-summary");
+
+    calculateTotalPrice();
+  } else {
+    const addonTitle = target.querySelector(".plans-title");
+    const totalAddons = bottomSummary.querySelectorAll(".addon-summary");
+
+    totalAddons.forEach(function (totalAddon) {
+      const addonSelected = totalAddon.querySelector(".addon-selected");
+      if (addonTitle.innerText === addonSelected.innerText) {
+        bottomSummary.removeChild(addonSelected.parentElement);
+      }
+    });
+
+    if (totalAddons.length === 1) {
+      bottomSummary.classList.remove("active-bottom-summary");
+    }
+
+    calculateTotalPrice();
+  }
+});
+
+// Update the prices:
+function updatePrices() {
+  const addonSummary = bottomSummary.querySelectorAll(".addon-summary");
+
+  if (addonSummary.length !== 0) {
+    addonSummary.forEach(function (addon) {
+      addonsDiv.forEach(function (addDiv) {
+        const addonTime = addDiv.querySelector(".addons-time");
+        const addonsTitle = addDiv.querySelector(".plans-title");
+        const addonsSelected = addon.querySelector(".addon-selected");
+        if (addonsSelected.innerText === addonsTitle.innerText) {
+          const addonsPrice = addon.querySelector(".addon-price");
+          addonsPrice.innerText = addonTime.innerText;
+        }
+      });
+    });
+  }
+}
+
+// The total Price:
+function calculateTotalPrice() {
+  let planPrice = summary.querySelector(".plan-price");
+  let totalArray = [];
+  let firstPriceMod = planPrice.innerText.slice(0, -3);
+  let secondPriceMod = Number(firstPriceMod.slice(1));
+
+  totalArray.push(secondPriceMod);
+
+  const addonSummary = bottomSummary.querySelectorAll(".addon-summary");
+  if (addonSummary.length !== 0) {
+    addonSummary.forEach(function (addon) {
+      const addonPrice = addon.querySelector(".addon-price");
+      let addonPriceMod = addonPrice.innerText.slice(0, -3);
+      let addonPriceFinal = Number(addonPriceMod.slice(2));
+      totalArray.push(addonPriceFinal);
+    });
+  }
+
+  let sumOfPrices = totalArray.reduce((a, b) => a + b, 0);
+  const totalprice = document.querySelector(".total-price");
+
+  const activePlan = document.querySelector(".active-plan");
+  let slicedActivePlan = activePlan.innerText.slice(0, -5);
+  if (activePlan.classList.contains("monthly")) {
+    totalprice.innerText = `$${sumOfPrices.toString()}/${slicedActivePlan.toLowerCase()}`;
+  } else {
+    totalprice.innerText = `$${sumOfPrices.toString()}/${slicedActivePlan.toLowerCase()}r`;
+  }
+}
+
+calculateTotalPrice();
+
+confirm.addEventListener("click", confirmedInput);
+function confirmedInput() {
+  let carouselBtns = document.querySelector(".carousel-btn");
+
+  const planSelected = document.querySelector(".plan-selected");
+
+  if (validName && validEmail && validNumber) {
+    counter++;
+    carousel();
+    numbers.forEach(function (number) {
+      number.classList.add("stop-number");
+    });
+
+    function removeBtns() {
+      if (x.matches) {
+        carouselBtns.classList.add("remove-btns");
+      }
+    }
+    var x = window.matchMedia("(max-width: 1000px)");
+    removeBtns(x);
+  } else if (!validName && validEmail && validNumber) {
+    alert("Oops, seems the name input is either empty or invalid.");
+    counter = 0;
+    carousel();
+  } else if (validName && !validEmail && validNumber) {
+    alert("Oops, seems the email input is either empty or invalid.");
+    counter = 0;
+    carousel();
+  } else if (validName && validEmail && !validNumber) {
+    alert("Oops, seems the number input is either empty or invalid.");
+    counter = 0;
+    carousel();
+  } else {
+    alert("Please enter all input fields.");
+    counter = 0;
+    carousel();
+  }
+  if (validName && validEmail && validNumber && planSelected.innerText === "") {
+    alert("Please select a plan");
+    counter = 1;
+    carousel();
+    carouselBtns.classList.remove("remove-btns");
+  }
+}</script>
+</body>
+</html>
