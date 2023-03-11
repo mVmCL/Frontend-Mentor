@@ -9,6 +9,7 @@ const Notifications = () => {
 
   const [notifications, setNotifications] = React.useState(data.notifications);
   const [readCount, setReadCount] = useState(notifications.filter(notification => notification.read).length);
+  const [numberOfNotifications, setNumberOfNotifications] = useState('')
 console.log(readCount)
 
   useEffect(() => {
@@ -26,7 +27,8 @@ console.log(readCount)
         )}\n\n \b\b\b\bMessage\b\b\b\b\n\n${JSON.stringify(
           notification.notification
         )}`
-      );setReadCount(readCount +1)
+      );
+      // setReadCount(7)
       notification.read = true;
       setNotifications([...notifications]);
 console.log(readCount)
@@ -47,9 +49,11 @@ console.log(readCount)
     notifications.map((notification) => (notification.read = false));
 
     setNotifications([...notifications]);
-    setReadCount(0);
-  };
+    // setReadCount(notification.read.length);
+    setNumberOfNotifications(7)
 
+    console.log(numberOfNotifications)
+  };
   return (
     <div className='notification-header'>
       <NotificationHeader
@@ -71,24 +75,28 @@ const NotificationHeader = ({
   readCount,
   handleMarkAllRead,
   handleMarkAllUnRead,
-  fromWho
+  numberOfNotifications
 }) => {
   return (
     <div className="header-wrapper">
       <header className="">
         <h1>
           Notifications{" "}
-    <div className='notification-icon'> {readCount}</div>
+    <div className='notification-icon'> 
+    {readCount} 
+  {numberOfNotifications}
+    {/* {readCount = 0?numberOfNotifications} */}
+    </div>
         </h1>
 
       <div className="header-select-all">
-        {readCount === 0 ? (
+        {readCount < 7?(
           <button className="no-button" onClick={handleMarkAllRead}>
-            Mark All UnRead
+            Mark All Read
           </button>
         ) : (
           <button className="no-button" onClick={handleMarkAllUnRead}>
-            Mark All Read
+            Mark All UnRead
           </button>
         )}
       </div>
@@ -127,8 +135,7 @@ const NotificationList = ({ notifications, onClick, onFocus, notification }) => 
 const Notification = ({ notification, onClick, onFocus }) => {
   return (
     <div onClick={() => onClick(notification)} onFocus={() => onFocus(notification)} 
-    className={ notification.read ? 'notification-container' :
-      'unread-notification-container' }>
+    className={  'notification-container ' }>
       {/* <div className="col-one"> */}
         {notification.author.img && (
           <img src={notification.author.img} alt="notification" />

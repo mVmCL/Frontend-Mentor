@@ -166,12 +166,24 @@ border-radius: 14px;
     top: 20;
     display: flex;
   }
+.message{
+  color:black;
+  display:flex;
+  position: absolute;
+}
+.notification-container{
+  margin:30px;
+  padding:20px;
+  height:max-content;
+  background-color:Red;
+}
 
-
+*{
+}
 
   body {
-    height: 100vh;
     min-height: max-content;
+    
   }
 }
 
