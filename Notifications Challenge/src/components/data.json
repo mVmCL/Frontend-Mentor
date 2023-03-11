@@ -10,7 +10,7 @@
                 "img": "images/avatar-mark-webber.webp"
             },
             "link": "My first tournament today!",
-            "read":true
+            "read":false
         },
         {
             "id": "jcvfJghkY",
@@ -47,7 +47,7 @@
                 "message": "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game."
             },
             "link": "",
-            "read":false
+            "read":true
         },
         {
             "id": "gshtdDYrT",
@@ -83,7 +83,7 @@
                 "img": "images/avatar-anna-kim.webp"
             },
             "link": "Chess Club",
-            "read": false
+            "read":true
         }
     ]
 }

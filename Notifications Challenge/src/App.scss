@@ -13,17 +13,25 @@ $notification-bg: #d43;
   border-radius: 4px;
   // margin-bottom: 1rem;
   max-width: 100%;
-  flex-wrap:wrap;
-  background-color: red;
   font-family: bold;
+    // background-color: #cdf1ed;
+    flex-basis: auto;
+    color:slategray;
+    opacity: 80%;
+  
+}
+
+.link{
+  font-family: cursive;
 }
 body{
-    // border:3px so
-    padding:15px;
-    margin:100px;
+    border:.5mm solid whitesmoke;
+    // padding:15px;
+
+    margin:20px;
     border-radius:15px;
     background-color: white;
-    box-shadow: 3px 3px 309px 3px rgb(197, 210, 221);
+    box-shadow: 3px 3px 309px 3px rgb(197, 210, 221), 3px 3px 30px 3px blue, 1px 1px 30px 1px grey inset;
 
 }
 
@@ -35,8 +43,9 @@ body{
     max-height:fit-content;
 }
 .notification-icon {
-  margin:30px;
-  height:auto;
+float:right;
+margin-left:40px;
+height:auto;
   background-color: #2e2be2;
   color:whitesmoke;
   font-weight: 800;
@@ -65,18 +74,22 @@ body{
   height:max-content;
 }
 
-.element1{
-  display: inline-grid;
-  height:max-content;
-  width: 70%;
-  justify-content: space-around;
-  // margin-right:850px;
-  position:static;
-  left:100px;
-grid-template-rows: 1fr;
-grid-template-columns:2fr 1fr;
+// .element2{
+//   grid-column-start:2;
+//   padding:40px;
+// }
+// .element1{
+//   display: inline-grid;
+//   height:max-content;
+//   width: 70%;
+//   justify-content: space-around;
+//   // margin-right:850px;
+//   position:static;
+//   left:100px;
+// grid-template-rows: 1fr;
+// grid-template-columns:2fr 1fr;
 
-}
+// }
 
 
 .line-two{
@@ -104,19 +117,13 @@ grid-template-columns:2fr 1fr;
     font-weight: normal;
     font-style: normal;
 }
-.notification{
-  // background-color: #cdf1ed;
-  display:flex;
-  flex-basis: auto;
-  padding:20px;
-}
+
 .notifications{
 height:auto;
 width:auto ;
 border-radius: 14px;
   margin:3px;
   padding:1px 40px;
-  
   display: grid;
   grid-template-columns: auto;
 }
@@ -126,19 +133,21 @@ border-radius: 14px;
 
 
 
-.no-button{
-    background-color: white;
-    border:none;
-    font-weight: 100;
-    color:slategray;
-    cursor: pointer;
-}
+// .no-button{
+//     background-color: white;
+//     // border:none;
+//     display:flex;
+//     font-weight: 100;
+//     color:slategray;
+//     cursor: pointer;
+// }
 
 
 .name{
   line-height: .98rem;
   color:black;
-  font-size: larger;
+  font-size: 23px;
+  font-weight: bold;
   
 }
 
@@ -152,39 +161,45 @@ h1{
     font-family:'PlusJakartaSans-Variable';
     font-size:40px;
     margin-left:20px;
+    display: inline;
     font-weight: bold;
     letter-spacing: .01in;
     
 }
 
 
-.header-wrapper{
-        display:inline-flex;
-        width: 80%;
-        justify-content: space-between;
-        align-items: center;
+// .header-wrapper{
+//         display:grid;
+//         grid-template-columns: auto auto;
+//         width: 80%;
+//         justify-content: space-between;
+//         align-items: center;
 
 
-@media (max-width: 600px){
+// @media (max-width: 600px){
 
-        flex-direction:row;
+//         flex-direction:row;
 
-        h1{
-            text-align: start;
-        }
-
-
-
-        p{
-            text-align:center;
-        }
+//         h1{
+//             text-align: start;
+//         }
 
 
-}}
+
+//         p{
+//             text-align:center;
+//         }
+
+
+// }}
 button{
     font-size:25px;
+// border:4px solid red;
     background-color:white;
-    font-weight: bold;
+    border:none;
+    opacity: 80%;
+    // font-weight: bold;
+    // right:100%;
     color:rgba(146, 84, 245, 0.835);
 }
 
@@ -275,12 +290,14 @@ button{
 .notification-container {
     animation: notification-animation 0.5s ease-in-out;
     min-width: fit-content;
-    
     padding:22px;
     position: relative;
     font-family: cursive;
     word-wrap: break-word;
+    margin:3px;
+    border-radius: 9px;
     display: flex;
+    padding:20px;
     flex-direction: row;
     align-items: center;
   }
@@ -291,12 +308,41 @@ button{
   }
 
 
+
+  img, video {
+
+    height: auto;
+  }
+.unread-notification-container{
+  animation: notification-animation 0.5s ease-in-out;
+  min-width: fit-content;
+  padding:22px;
+  position: relative;
+  height:min-content;
+  font-family: cursive;
+  word-wrap: break-word;
+  margin:3px;
+  border-radius: 9px;
+  display: flex;
+  background-color: #dfe9f376;
+  padding:20px;
+  flex-direction: row;
+  align-items: center;
+}
+
+
   .unReadStatus {
-  background-color: red,}
+  background-color: red,;
+height:13px;
+width:13px;
+margin-bottom: 30px ;
+margin-left:3px;
+border-radius:150px;}
   
   .notification-wrapper {
     width: 100%;
     max-width: 600px;
+    min-width: max-content;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
@@ -343,13 +389,12 @@ button{
   }
   .message{
     border:.4px solid rgba(124, 119, 119, 0.397);
-    padding:20px;
-
+    display: grid;
+    height:max-content;
+    padding: 10px;
     font-family: cursive;
-    display:flex;
-    word-wrap: break-word;
-    margin:50px 5px 5px -80px;
-    line-height: .25in;
+    margin-left:20px;
+    position: absolute;
     border-radius: 6px;
     width:60%;
   }
@@ -368,3 +413,85 @@ button{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header-wrapper {
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+}
+
+header {
+  display: flex;
+  width: 90%;
+  padding:30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.element1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-select-all {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.element2 {
+  background: #ed3f6f;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+// .no-button {
+//   background: #ed3f6f;
+//   color: #fff;
+//   font-size: 1rem;
+//   padding: 10px;
+//   border-radius: 5px;
+//   margin-left: 20px;
+//   font-weight: bold;
+//   cursor: pointer;
+//   opacity: 0.5;
+//   pointer-events: none;
+// }
